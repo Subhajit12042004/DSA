@@ -1,43 +1,27 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-                
-        // Length of the input string
-        int n = s.size(); 
-        
-        //Variable to store max length
-        int maxLen = 0;    
-        
-        /* Iterate through all possible 
-        starting points of the substring*/
-        for (int i = 0; i < n; i++) {
-            
-            /* Hash to track characters in 
-            the current substring window*/
-            // Assuming extended ASCII characters
-            vector<int> hash(256, 0);  
-            
-            for (int j = i; j < n; j++) {
-                
-                /* If s[j] is already in the
-                current substring window*/
-                if (hash[s[j]] == 1) break;  
-                
-                /* Update the hash to mark s[j]
-                as present in the current window*/
-                hash[s[j]] = 1;
-                
-                /* Calculate the length of
-                the current substring*/
-                int len = j - i + 1;
-                
-                /* Update maxLen if the current
-                substring length is greater*/
-                maxLen = max(maxLen, len);
+        vector<int>hash(265, -1);
+        int n = s.length();
+        int l =0, r=0, maxlen =0;
+
+        while(r<n){
+            if(hash[s[r]]!=-1){
+                if(hash[s[r]]>=l){
+                    l = hash[s[r]] +1;
+
+                }
             }
-        }
+
+            int len = r-l+1;
+             maxlen= max(maxlen,len);
+             hash[s[r]] =r;
+             r++;
         
-        // Return the maximum length
-        return maxLen; 
+             
+        }
+
+        return maxlen;
+        
     }
 };
