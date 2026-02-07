@@ -1,21 +1,14 @@
 class Solution {
 public:
     int minimumDeletions(string s) {
-        int n = s.length();
-        stack<char>charStack;
-        int deleteCount =0;
-
-        for(int i=0; i<n ; i++){
-            if(!charStack.empty()&& charStack.top()=='b' && s[i] == 'a' ){
-                charStack.pop();
-                deleteCount++;
-            }else{
-                charStack.push(s[i]);
+        int b_before_a = 0, deletion = 0;
+        for(auto ch : s) {
+            if(ch == 'b') b_before_a += 1;
+            else if(b_before_a > 0 ) {
+                b_before_a -= 1;
+                deletion += 1;
             }
-        }
-
-
-        return deleteCount;
-        
+        }   
+        return deletion;
     }
 };
