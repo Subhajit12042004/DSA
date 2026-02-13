@@ -4,7 +4,7 @@ public:
         int n = s.size();
         int ans = 0;
 
-        // 1️⃣ Single-character runs
+
         int cnt = 1;
         for(int i = 1; i < n; i++){
             if(s[i] == s[i-1]) cnt++;
@@ -15,7 +15,6 @@ public:
         }
         ans = max(ans, cnt);
 
-        // 2️⃣ Two-character balanced cases
         vector<pair<char,char>> pairs = {
             {'a','b'}, {'a','c'}, {'b','c'}
         };
@@ -42,7 +41,7 @@ public:
             }
         }
 
-        // 3️⃣ Three-character balanced case
+
         unordered_map<long long,int> mp;
         mp[0] = -1;
 
