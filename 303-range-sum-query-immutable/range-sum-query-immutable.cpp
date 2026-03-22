@@ -11,8 +11,8 @@ vector<int>ans;
     int sumRange(int left, int right) {
         int result =0;
         for(int i=left; i<=right; i++){
-              result += ans[left];
-              left++;
+              result += ans[i];
+              
 
         }
        return result;
