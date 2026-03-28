@@ -12,11 +12,11 @@ public:
             x = min(x, it.first);
         }
 
-        int baseFreq = freq[x];
+        int FreqX = freq[x];
 
         int y = INT_MAX;
         for(auto &it : freq){
-            if(it.first > x && it.second != baseFreq){
+            if(it.first > x && it.second != FreqX){
                 y = min(y, it.first);
             }
         }
