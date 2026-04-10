@@ -18,7 +18,8 @@ public:
                     int a=ans[k-3];
                     int b=ans[k-2];
                     int c=ans[k-1];
-                sum =abs(a-b)+abs(b-c)+abs(c-a);
+                // sum =abs(a-b)+abs(b-c)+abs(c-a);
+                sum=2*(c-a);
                 minidis= min(minidis,sum);
 
                 }
