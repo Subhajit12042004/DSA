@@ -9,6 +9,7 @@ public:
         for(int i=0; i<n; i++){
             premax=max(premax,nums[i]);
             maxarr.push_back(premax);
+            // maxarr[i]=premax;
 
         }
         int postmin =INT_MAX;
