@@ -5,15 +5,9 @@ public:
         vector<int>ans;
        
         for(int i=0; i<n; i++){
-            vector<int>q;
-            while(nums[i]>0){
-               
-                q.push_back(nums[i]%10);
-                nums[i]= nums[i]/10;
-            }
-            reverse(q.begin(), q.end());
-            for(int j=0; j<q.size(); j++){
-                ans.push_back(q[j]);
+            string s = to_string(nums[i]);
+            for(char ch :s){
+                ans.push_back(ch-'0');;
             }
         }
 
